@@ -1,22 +1,7 @@
 # Dictionary to store account details
 accounts = {}
 
-# Function to get valid input from user, includes "back" option
-def get_valid_input(prompt, valid_range=None):
-    while True:
-        user_input = input(prompt).strip().lower()
-        if user_input == 'back':
-            return 'back'
-        try:
-            user_input = int(user_input)
-            if valid_range and user_input not in valid_range:
-                print(f"Please enter a number between {valid_range[0]} and {valid_range[-1]}.")
-            else:
-                return user_input
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
-
-# Function to create a new account
+# Frist lets create a function to create new account
 def create_account():
     while True:
         name = input("Enter a unique account name (or type 'back' to return): ").strip().lower()
@@ -31,7 +16,7 @@ def create_account():
             print(f"Account '{name}' has been created successfully.")
             break
 
-# Function to deposit money
+# Lets create a function to deposit money
 def deposit_money():
     while True:
         name = input("Enter account name to deposit money (or type 'back' to return): ").strip().lower()
@@ -52,7 +37,7 @@ def deposit_money():
         else:
             print("Account not found. Please enter a valid account name.")
 
-# Function to withdraw money
+# Lets create a function to withdraw money
 def withdraw_money():
     while True:
         name = input("Enter account name to withdraw money (or type 'back' to return): ").strip().lower()
@@ -76,7 +61,7 @@ def withdraw_money():
         else:
             print("Account not found. Please enter a valid account name.")
 
-# Function to view balance
+# Lets create a function to view balance
 def view_balance():
     while True:
         name = input("Enter account name to view balance (or type 'back' to return): ").strip().lower()
@@ -88,7 +73,7 @@ def view_balance():
         else:
             print("Account not found. Please enter a valid account name.")
 
-# Function to delete an account
+# Lets create a function to delete an account
 def delete_account():
     while True:
         name = input("Enter account name to delete (or type 'back' to return): ").strip().lower()
@@ -109,7 +94,7 @@ def delete_account():
         else:
             print("Account not found. Please enter a valid account name.")
 
-# Function to display the main menu
+# Lets create a function to display the main menu
 def main_menu():
     print("Hello! Welcome to the Simple Banking System.")
     while True:
@@ -139,7 +124,22 @@ def main_menu():
         else:
             print("Invalid choice. Please try again.")
 
-# Main function to run the program
+# Now lets create a Function to get valid input from user, includes "back" option
+def get_valid_input(prompt, valid_range=None):
+    while True:
+        user_input = input(prompt).strip().lower()
+        if user_input == 'back':
+            return 'back'
+        try:
+            user_input = int(user_input)
+            if valid_range and user_input not in valid_range:
+                print(f"Please enter a number between {valid_range[0]} and {valid_range[-1]}.")
+            else:
+                return user_input
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            
+
 def main():
     main_menu()
 if __name__ == "__main__":
